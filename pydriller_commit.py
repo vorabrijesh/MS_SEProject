@@ -9,8 +9,9 @@ import numpy as np
 file_to_users = {}  ## for each file how many users commited
 file_to_id = {}     ##
 i=0
+url = "E:\\MS\\Qtr1\\ecs 260 se\\project\\tvm\\.git"
 
-for commit in Repository('E:\\MS\\Qtr1\\shadow\\.git').traverse_commits():
+for commit in Repository(url).traverse_commits():
     print(
         'The commit  has been modified by {} and files changed are {}\n'.format(
            
@@ -72,7 +73,7 @@ for key in file_to_users.keys():
     for x in list_of_users:
         TA[unique_users_dict[x]][file_to_id[key]] = 1 
 
-for commit in Repository('E:\\MS\\Qtr1\\shadow\\.git').traverse_commits():
+for commit in Repository(url).traverse_commits():
     modified_files_in_commit = commit.modified_files
     for i in range(0, len(modified_files_in_commit)):
         for j in range(i, len(modified_files_in_commit)):
